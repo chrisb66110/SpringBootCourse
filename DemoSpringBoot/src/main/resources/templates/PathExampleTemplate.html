@@ -6,5 +6,11 @@
 </head>
 <body>
     <p th:text="'Hello, ' + ${name} + '!'" />
+    <table>
+    	<th:block th:each="per: ${persons}">
+    		<tr th:text="${per.idPerson}"></tr>
+    		<tr th:text="${per.name}"></tr>
+    	</th:block>
+    </table>
 </body>
 </html>
