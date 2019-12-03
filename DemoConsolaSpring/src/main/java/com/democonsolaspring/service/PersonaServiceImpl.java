@@ -10,6 +10,7 @@ import com.democonsolaspring.repository.IPersonaRepo;
 public class PersonaServiceImpl implements IPersonaService{
 
 	@Autowired
+	@Qualifier("personarepo2")
 	private IPersonaRepo repoPersona;
 	
 	@Override
