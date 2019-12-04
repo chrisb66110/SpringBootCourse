@@ -8,6 +8,12 @@ public interface IPersonService {
 	
 	List<Person> findAll();
 	
-	void save(Person persona);
+	Person find(int idPerson);
+	
+	Person insert(Person person);
+	
+	Person edit(Person person);
+	
+	void delete(int idPerson);
 	
 }

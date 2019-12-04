@@ -28,10 +28,10 @@ public class DemoController {
 	@GetMapping("/Person/save")
 	public String personSave(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		Person person = new Person();
-		person.setIdPerson(1);
-		person.setName("Persona 1");
+		person.setIdPerson(2);
+		person.setName("Persona 2");
 		
-		personaService.save(person);
+		personaService.insert(person);
 		
 		//Se manda a la vista mediante la siguiente instruccion
 		model.addAttribute("name", name);

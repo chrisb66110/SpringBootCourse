@@ -16,12 +16,29 @@ public class PersonServiceImpl implements IPersonService {
 
 	@Override
 	public List<Person> findAll() {
-		return this.personRepository.findAll();	
+		return personRepository.findAll();
 	}
 
 	@Override
-	public void save(Person person) {
-		this.personRepository.save(person);
+	public Person find(int idPerson) {
+		return personRepository.findById(idPerson).orElse(null);
 	}
+
+	@Override
+	public Person insert(Person person) {
+		return personRepository.save(person);
+	}
+
+	@Override
+	public Person edit(Person person) {
+		return personRepository.save(person);
+	}
+
+	@Override
+	public void delete(int idPerson) {
+		personRepository.deleteById(idPerson);
+	}
+
+	
 
 }
