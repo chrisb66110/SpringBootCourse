@@ -7,27 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.demospringboot.model.User;
-import com.demospringboot.repository.IUserRepository;
+import com.demospringboot.model.UserDataBase;
+import com.demospringboot.repository.IUserDataBaseRepository;
 
 @SpringBootTest
 class DemoSpringBootApplicationTests {
 	
 	@Autowired
-	private IUserRepository userRepository;
+	private IUserDataBaseRepository userRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Test
 	public void createUserRepositoryTest() {
-		User user = new User();
-		user.setId(3);
-		user.setUserName("Usuario3");
-		user.setPassword(bCryptPasswordEncoder.encode("Password3"));
-		User userReturned = userRepository.save(user);
+		UserDataBase user = new UserDataBase();
+		user.setId(4);
+		user.setUserName("User4");
+		user.setPassword(bCryptPasswordEncoder.encode("Password4"));
+		UserDataBase userReturned = userRepository.save(user);
 		
-		assertTrue(bCryptPasswordEncoder.matches("Password3", userReturned.getPassword()));
+		assertTrue(bCryptPasswordEncoder.matches("Password4", userReturned.getPassword()));
 	}
 
 }
