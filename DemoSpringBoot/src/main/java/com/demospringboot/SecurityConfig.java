@@ -34,14 +34,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		auth
 			.inMemoryAuthentication()
 			.withUser("root")
-			.password("1234")
+			.password(bCryptPasswordEncoder.encode("1234"))
 			.roles("USER")
 			.and()
 			.withUser("admin")
-			.password("admin")
+			.password(bCryptPasswordEncoder.encode("admin"))
 			.roles("USER", "ADMIN");
 	}
 	*/
+	
 	
 	//Users from database using UserDataBaseServiceImpl to implements UserDetailsService
 	@Override
